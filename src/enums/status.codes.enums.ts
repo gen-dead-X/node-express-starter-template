@@ -1,4 +1,4 @@
-export declare enum STATUS_CODES {
+export enum STATUS_CODES {
   /**
    * Official Documentation @ https://tools.ietf.org/html/rfc7231#section-6.2.1
    *
