@@ -6,6 +6,7 @@ import globalLoggerMiddleware from "../middlewares/error.handlers/global.error.h
 import loggerMiddleware from "../middlewares/logger/global.logger.middleware.js";
 import { ApiResponse } from "../utils/response.utils.js";
 import router from "../routes/rootRouter";
+import { STATUS_CODES } from "../enums/status.codes.enums.js";
 
 const PORT = config.PORT;
 
@@ -18,7 +19,9 @@ export default function createServer() {
   app.use(globalLoggerMiddleware);
   app.use(router);
   app.use((req, res, next) => {
-    res.status(404).send(ApiResponse.error("Route Not Found"));
+    res
+      .status(STATUS_CODES.NOT_FOUND)
+      .send(ApiResponse.error("Route Not Found"));
   });
 }
 
