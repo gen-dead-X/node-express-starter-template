@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 
-export class ApiResponse<T = any> {
+export class ApiResponse<T = unknown> {
   message: string
   success: boolean
   data?: T

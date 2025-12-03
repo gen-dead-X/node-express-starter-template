@@ -9,8 +9,8 @@ export default function globalLoggerMiddleware(
   try {
     const { body, headers, params, query, originalUrl, baseUrl, host } = req
 
-    console.log(':::::::::::::::::::::Incoming Request:::::::::::::::::::::')
-    console.log({
+    console.info(':::::::::::::::::::::Incoming Request:::::::::::::::::::::')
+    console.info({
       body,
       headers,
       params,
@@ -20,7 +20,7 @@ export default function globalLoggerMiddleware(
       host,
       time: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
     })
-    console.log(':::::::::::::::::::::Request Ends:::::::::::::::::::::')
+    console.info(':::::::::::::::::::::Request Ends:::::::::::::::::::::')
 
     next()
   } catch (error) {

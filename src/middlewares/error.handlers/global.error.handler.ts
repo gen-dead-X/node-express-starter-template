@@ -1,13 +1,15 @@
 import type { NextFunction, Request, Response } from 'express'
+
 import { ApiResponse } from '../../utils/response.utils'
 
 export default function globalErrorHandler(
   error: Error,
-  req: Request,
+  _: Request,
   res: Response,
-  next: NextFunction
+  __: NextFunction
 ) {
   console.error('Global Error Handler:', error)
+
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode
 
   res

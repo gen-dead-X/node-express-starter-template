@@ -1,7 +1,7 @@
 import createServer from './server/server'
 
 async function bootstrap() {
-  console.log('Bootstrapping application...')
+  console.info('Bootstrapping application...')
   createServer()
 }
 

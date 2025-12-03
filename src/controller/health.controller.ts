@@ -1,6 +1,7 @@
 import type { RequestHandler } from 'express'
-import { ApiResponse } from '../utils/response.utils'
+
 import { STATUS_CODES } from '../enums/status.codes.enums'
+import { ApiResponse } from '../utils/response.utils'
 
 export default class HealthController {
   public getHealth: RequestHandler = (_, res, next) => {
