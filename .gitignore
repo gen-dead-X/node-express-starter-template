@@ -36,3 +36,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # Environment Variables
 .env
 
+# Build Directories
+build/
+dist/
+out/

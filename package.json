@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "bun --watch --hot src/index.ts",
     "dev:inspect": "bun --watch --hot --inspect src/index.ts",
-    "start": "bun src/index.ts"
+    "start": "bun src/index.ts",
+    "build:prod": "bun /build.ts",
+    "start:prod": "bun dist/index.js"
   },
   "devDependencies": {
     "@types/bun": "latest",
