@@ -1,26 +1,26 @@
-import { format } from "date-fns";
+import { format } from 'date-fns'
 
 export class ApiResponse<T = any> {
-  message: string;
-  success: boolean;
-  data?: T;
-  timestamp: string;
+  message: string
+  success: boolean
+  data?: T
+  timestamp: string
 
   constructor(message: string, success: boolean, data?: T) {
-    this.message = message;
-    this.success = success;
-    this.timestamp = format(new Date(), "yyyy-MM-dd HH:mm:ss");
+    this.message = message
+    this.success = success
+    this.timestamp = format(new Date(), 'yyyy-MM-dd HH:mm:ss')
 
     if (data !== undefined) {
-      this.data = data;
+      this.data = data
     }
   }
 
   static success<T>(message: string, data?: T) {
-    return new ApiResponse<T>(message, true, data);
+    return new ApiResponse<T>(message, true, data)
   }
 
   static error(message: string) {
-    return new ApiResponse(message, false);
+    return new ApiResponse(message, false)
   }
 }

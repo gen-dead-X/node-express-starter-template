@@ -1,11 +1,11 @@
-import createServer from "./server/server";
+import createServer from './server/server'
 
 async function bootstrap() {
-  console.log("Bootstrapping application...");
-  createServer();
+  console.log('Bootstrapping application...')
+  createServer()
 }
 
 bootstrap().catch((error) => {
-  console.error("Error during application bootstrap:", error);
-  process.exit(1);
-});
+  console.error('Error during application bootstrap:', error)
+  process.exit(1)
+})

@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 services:
   app:
     build:
@@ -7,7 +7,7 @@ services:
       # Dockerfile lives in the repo at docker/prod/Dockerfile; path is relative to the build context
       dockerfile: docker/prod/Dockerfile
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       - NODE_ENV=production
       - PORT=3000

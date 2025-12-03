@@ -1,5 +1,5 @@
-import { format } from "date-fns";
-import type { Request, Response, NextFunction } from "express";
+import { format } from 'date-fns'
+import type { Request, Response, NextFunction } from 'express'
 
 export default function globalLoggerMiddleware(
   req: Request,
@@ -7,9 +7,9 @@ export default function globalLoggerMiddleware(
   next: NextFunction
 ) {
   try {
-    const { body, headers, params, query, originalUrl, baseUrl, host } = req;
+    const { body, headers, params, query, originalUrl, baseUrl, host } = req
 
-    console.log(":::::::::::::::::::::Incoming Request:::::::::::::::::::::");
+    console.log(':::::::::::::::::::::Incoming Request:::::::::::::::::::::')
     console.log({
       body,
       headers,
@@ -18,12 +18,12 @@ export default function globalLoggerMiddleware(
       originalUrl,
       baseUrl,
       host,
-      time: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
-    });
-    console.log(":::::::::::::::::::::Request Ends:::::::::::::::::::::");
+      time: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+    })
+    console.log(':::::::::::::::::::::Request Ends:::::::::::::::::::::')
 
-    next();
+    next()
   } catch (error) {
-    next(error);
+    next(error)
   }
 }
